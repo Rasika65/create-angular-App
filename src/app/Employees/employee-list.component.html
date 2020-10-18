@@ -1,0 +1,46 @@
+<div class="col-lg-5">
+
+  <div>
+    <img src="assets/images/affinityid-logo.svg" alt="logo" />
+  </div>
+  <div style="margin-top: 50px"></div>
+  <div>
+    <input type="text" class="form-control" placeholder="Search:" [(ngModel)]="searchTerm" name="clientname" />
+  </div>
+  <div style="margin-top: 20px"></div>
+
+  <div *ngFor="let employee of filteredEmployees">
+    <div (click)="getEmployee(displayComponent.employee)">
+      <app-display-employee [employee]="employee" #displayComponent>
+      </app-display-employee>
+    </div>
+  </div>
+</div>
+
+<div class="col-lg-2">
+</div>
+
+<div class="col-lg-5">
+  <div class="panel">
+    <div class="panel-body  panel-transparent">      
+          <button class="btn btn-dark btn-lg btn-block " type="button"  (click)="showCreatePanel()">Create a new
+            Employee</button>      
+    </div>
+  </div>
+
+  <div style="margin-top: 50px"></div>
+
+  <div class="panel panel-default shadow-lg rounded " *ngIf="showDetails">
+    <div class="panel-body">
+      <app-employee-details [employee]="emp" (notify)="handleNotifyDetails($event)"></app-employee-details>
+    </div>
+  </div>
+
+  <div class="panel panel-default shadow-lg rounded " *ngIf="!showDetails" >
+    <div class="panel-body" >
+      <app-create-employee (notify)="handleNotifyCreate($event)"></app-create-employee>
+    </div>
+  </div>
+
+
+</div>

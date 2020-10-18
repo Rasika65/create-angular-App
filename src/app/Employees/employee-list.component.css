@@ -1,0 +1,17 @@
+.imageClass{
+    width:60px;
+    height:60px;
+}
+.vertical-align{
+    display: flex;
+    align-items: center;
+}
+.btn-dark {
+    color: #fff;
+    background-color: #000507d5;
+    font-size: 15px;
+    font-family:  Arial ; 
+}
+.panel-transparent {
+    padding: 0%;
+}

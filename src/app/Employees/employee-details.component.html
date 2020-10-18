@@ -1,0 +1,81 @@
+<div class="panel-body">
+  <div class="row">
+    <div class="col-6">
+
+
+      <div class="row center">
+        <div class="col-md-12">
+          <img class="imageClass" [src]="employee.photoPath" />
+        </div>
+
+        <div style="margin-top: 5px"></div>
+
+        <div class="row">
+          <div class="col-md-12 textheader">
+            {{employee.name}}
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 text">
+            {{employee.email}}
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-12 text">
+            <button class="btn btn-primary" type="submit" [routerLink]="['/list',employee.id]" (click)="editEmployee()">Edit</button>
+            <span *ngIf="confirmDeleteFlag">
+              <span>Are you sure you want to Delete?</span>
+              <button class="btn btn-danger" (click)="deleteEmployee()">Yes</button>
+              <button class="btn btn-primary" (click)="confirmDeleteFlag=false">No</button>
+            </span>
+            <button *ngIf="!confirmDeleteFlag" class="btn btn-danger" (click)="confirmDeleteFlag=true">Delete</button>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row smalltextheader">
+        <div class="col-md-6 ">
+          Role
+        </div>
+        <div class="col-md-6 ">
+          Team
+        </div>
+      </div>
+
+      <div class="row smalltext">
+        <div class="col-md-6 ">
+          {{employee.role}}
+        </div>
+        <div class="col-md-6 ">
+          {{employee.team}}
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row smalltextheader">
+        <div class="col-md-6 ">
+          Address
+        </div>
+        <div class="col-md-6 ">
+          City
+        </div>
+      </div>
+
+      <div class="row smalltext">
+        <div class="col-md-6 ">
+          {{employee.address}}
+        </div>
+        <div class="col-md-6 ">
+          {{employee.address}}
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
