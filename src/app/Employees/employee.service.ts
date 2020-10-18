@@ -9,7 +9,7 @@ export class EmployeeService {
           id: 1,
           name: 'Andy',
           email: 'andy@gmail.com',
-          role: 'Manager',
+          role: 'Admin',
           team: 'HR',
           address: 'Auckland',
           photoPath: 'assets/images/andy.png'
@@ -18,7 +18,7 @@ export class EmployeeService {
           id: 2,
           name: 'Donna',
           email: 'donna@gmail.com',
-          role: 'Manager',
+          role: 'Employee',
           team: 'HR',
           address: 'Auckland',
           photoPath: 'assets/images/donna.png'
@@ -27,7 +27,7 @@ export class EmployeeService {
           id: 3,
           name: 'Jack',
           email: 'jack@gmail.com',
-          role: 'Manager',
+          role: 'Admin',
           team: 'HR',
           address: 'Auckland',
           photoPath: 'assets/images/jack.png'
@@ -36,7 +36,7 @@ export class EmployeeService {
           id: 4,
           name: 'Mary',
           email: 'mary@gmail.com',
-          role: 'Manager',
+          role: 'Admin',
           team: 'HR',
           address: 'Auckland',
           photoPath: 'assets/images/mary.png'
@@ -45,7 +45,7 @@ export class EmployeeService {
           id: 5,
           name: 'Victoria',
           email: 'victoria@gmail.com',
-          role: 'Manager',
+          role: 'Employee',
           team: 'HR',
           address: 'Auckland',
           photoPath: 'assets/images/victoria.png'

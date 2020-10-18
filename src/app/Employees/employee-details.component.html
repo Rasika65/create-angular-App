@@ -25,12 +25,12 @@
         <div class="row">
           <div class="col-md-12 text">
             <button class="btn btn-primary" type="submit" [routerLink]="['/list',employee.id]" (click)="editEmployee()">Edit</button>
-            <span *ngIf="confirmDelete">
+            <span *ngIf="confirmDeleteFlag">
               <span>Are you sure you want to Delete?</span>
               <button class="btn btn-danger" (click)="deleteEmployee()">Yes</button>
-              <button class="btn btn-primary" (click)="confirmDelete=false">No</button>
+              <button class="btn btn-primary" (click)="confirmDeleteFlag=false">No</button>
             </span>
-            <button *ngIf="!confirmDelete" class="btn btn-danger" (click)="confirmDelete=true">Delete</button>
+            <button *ngIf="!confirmDeleteFlag" class="btn btn-danger" (click)="confirmDeleteFlag=true">Delete</button>
           </div>
         </div>
       </div>
