@@ -1,0 +1,86 @@
+<div class="row">
+
+  <div class="col-6">
+    <form #employeeForm="ngForm" (ngSubmit)="saveEmployee()">
+      <div class="panel ">
+        <div class="panel-body">
+
+          <div class="form-group">
+            <label for="photoPath">Profile Image</label>
+            <select id="photoPath" name="photoPath" [(ngModel)]="employee.photoPath" class="form-control">
+              <option value="assets/images/andy.png">Andy.png</option>
+              <option value="assets/images/donna.png">Donna.png</option>
+              <option value="assets/images/jack.png">Jack.png</option>
+              <option value="assets/images/mary.png">Mary.png</option>
+              <option value="assets/images/victoria.png">Victoria.png</option>
+            </select>
+          </div>
+
+          <div class="form-group" [class.has-error]="fullNameControl.invalid && fullNameControl.touched"
+            [class.has-success]="fullNameControl.valid">
+            <label for="name">Name</label>
+            <input id="name" type="text" class="form-control" name="name" [(ngModel)]="employee.name" required
+              #fullNameControl="ngModel">
+            <span class="help-block" *ngIf="fullNameControl.invalid && fullNameControl.touched">
+              Full Name is required
+            </span>
+          </div>
+
+          <div class="form-group" [class.has-error]="email.invalid && email.touched">
+            <label for="email">Email Adress</label>
+            <input id="email" type="text" class="form-control" name="email" [(ngModel)]="employee.email" required
+              pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" #email="ngModel">
+            <span class="help-block" *ngIf="email.errors?.required && email.touched">
+              Email is required
+            </span>
+            <span class="help-block" *ngIf="email.errors?.pattern && email.touched">
+              Email is Invalid
+            </span>
+          </div>
+
+          <div class="form-group" [class.has-error]="role.touched && role.invalid">
+            <label for="role">Role</label>
+            <select id="role" name="role" [(ngModel)]="employee.role" class="form-control" required #role="ngModel">
+              <option value="Admin">Admin</option>
+              <option value="Employee">Employee</option>
+            </select>
+            <span class="help-block" *ngIf="role.touched && role.invalid">
+              Role is required
+            </span>
+          </div>
+
+          <div class="form-group" [class.has-error]="team.touched && team.invalid">
+            <label for="team">Team</label>
+            <select id="team" name="team" [(ngModel)]="employee.team" class="form-control" required #team="ngModel">
+              <option value="Creative">Creative</option>
+              <option value="HR">HR</option>
+              <option value="Manager">Manager</option>
+              <option value="Payroll">Payroll</option>
+              <option value="Finance & Admin">Finance & Admin</option>
+            </select>
+            <span class="help-block" *ngIf="team.touched && team.invalid">
+              Team is required
+            </span>
+          </div>
+
+          <div class="form-group" [class.has-error]="address.invalid && address.touched"
+            [class.has-success]="address.valid">
+            <label for="address">Address</label>
+            <input id="address" type="text" class="form-control" name="address" [(ngModel)]="employee.address" required
+              #address="ngModel">
+          </div>
+          <span class="help-block" *ngIf="address.invalid && address.touched">
+            Address is required
+          </span>
+
+          <button class="btn btn-primary" type="submit" [disabled]="employeeForm.invalid" >Save</button>
+          <!-- <button class="btn btn-primary" (click)="editEmployee()">Edit</button> -->
+          <button class="btn btn-danger" type="button" (click)="hideCreatePanel()">Cancel</button> 
+
+
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>

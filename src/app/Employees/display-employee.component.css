@@ -1,0 +1,51 @@
+
+.imageClass{
+    width:60px;
+    height:60px;
+}
+.vertical-align{
+    display: flex;
+    align-items: center;
+}
+
+.pointerCursor {
+    cursor: pointer;
+}
+
+.textheader{
+    color: #827e99 ;
+    font-size: 15px;
+    font-family:  Arial ;
+    font-weight: bold;
+    line-height: 18px;
+}
+.text{
+    color: #827e99 ;
+    font-size: 14px;
+    font-family:  Arial ;
+    line-height: 18px;
+}
+
+.role{
+    color: #9B9B9B ;
+    font-size: 12px;
+    font-family:  Arial ;
+    line-height: 14px;
+}
+
+.title{
+    color: #827e99 ;
+    font-size: 14px;
+    font-family:  Arial ;
+    line-height: 16px;
+}
+
+.panel {
+    color: #333 ;
+}
+.center{
+    text-align: center;
+}
+
+
+

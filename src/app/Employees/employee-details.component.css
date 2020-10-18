@@ -1,0 +1,31 @@
+.imageClass{
+    width:104px;
+    height:104px;
+}
+
+.textheader{
+    color: #4a4a4a ;
+    font-size: 24px;
+    font-family:  Arial ;
+    font-weight: bold;
+    line-height: 26px;
+}
+
+.smalltextheader{
+    color: #4a4a4a ;
+    font-size: 12px;
+    font-family:  Arial ;
+    font-weight: bold;
+    line-height: 14px;
+}
+
+.smalltextheader{
+    color: #4a4a4a ;
+    font-size: 14px;
+    font-family:  Arial ;
+    line-height: 16px;
+}
+
+.center{
+    text-align: center;
+}
