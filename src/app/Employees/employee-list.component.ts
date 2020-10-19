@@ -13,6 +13,8 @@ export class EmployeeListComponent implements OnInit {
   employees: Employee[];
   emp: Employee;
   showDetails = true;
+  // private field _id to keep track of the route parameter value
+  private _id;
 
   // Use this property to stored filtered employees
   filteredEmployees: Employee[];
@@ -41,18 +43,18 @@ export class EmployeeListComponent implements OnInit {
     this.filteredEmployees = this.employees;
 
     this._route.paramMap.subscribe(parameterMap => {
-      const id = +parameterMap.get('id');
+      this._id = +parameterMap.get('id');
 
       //check the id parameter and if its zero load the 1 st employee otherwise load the employee with same id as id parameter
-      if (id === 0) {   
+      if (this._id === 0) {   
         this._router.navigate(['list',1]);
-      } else if(id===-1)
+      } else if(this._id===-1)
       {
         this.showDetails= false;
       }
-      else{
-        this._router.navigate(['list', id]);
-        this.emp = Object.assign({}, this._employeeService.getEmployee(id));
+      else{        
+        this.emp = Object.assign({}, this._employeeService.getEmployee(this._id));
+        this.showDetails = true;
       }
       
     });
@@ -60,10 +62,8 @@ export class EmployeeListComponent implements OnInit {
 
   //get employee object from list component and pass it to displayEmployeeComponent
   getEmployee(employee: Employee) {
-    this.emp = employee;
-    this.showDetails = true;
-    this._router.navigate(['list', this.emp.id]);
-  }
+    this._router.navigate(['list', employee.id]);
+   }
 
   //handles emmitter event from employee details
   handleNotifyDetails(eventData: boolean) {

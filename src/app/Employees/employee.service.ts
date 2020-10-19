@@ -72,6 +72,7 @@ export class EmployeeService {
       const foundIndex = this.listEmployees.findIndex(e => e.id === employee.id);
       this.listEmployees[foundIndex] = employee;
     }
+    return employee.id
   }
 
   getEmployee(id: number) {
