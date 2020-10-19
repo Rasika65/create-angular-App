@@ -44,7 +44,7 @@ export class EmployeeListComponent implements OnInit {
       const id = +parameterMap.get('id');
 
       //check the id parameter and if its zero load the 1 st employee otherwise load the employee with same id as id parameter
-      if (id === 0) {        
+      if (id === 0) {   
         this._router.navigate(['list',1]);
       } else if(id===-1)
       {
@@ -58,10 +58,11 @@ export class EmployeeListComponent implements OnInit {
     });
   }
 
-  //get employee onjevt from list component and pass it to displayEmployeeComponent
+  //get employee object from list component and pass it to displayEmployeeComponent
   getEmployee(employee: Employee) {
     this.emp = employee;
     this.showDetails = true;
+    this._router.navigate(['list', this.emp.id]);
   }
 
   //handles emmitter event from employee details
