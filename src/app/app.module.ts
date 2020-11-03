@@ -10,6 +10,7 @@ import { EmployeeService } from './Employees/employee.service';
 import { FormsModule } from '@angular/forms';
 import { CreateEmployeeComponent } from './Employees/create-employee.component';
 import { EmployeeDetailsComponent } from './Employees/employee-details.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 const appRoutes: Routes = [
@@ -37,7 +38,8 @@ const appRoutes: Routes = [
     ClipboardModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbModule
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]
