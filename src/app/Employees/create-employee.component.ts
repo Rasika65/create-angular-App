@@ -15,6 +15,8 @@ export class CreateEmployeeComponent implements OnInit {
   employee: Employee;
   @Output() notify: EventEmitter<boolean> = new EventEmitter<boolean>();
   flag= true; // This property is used in the view template to show and hide crate panel
+  // Include a private field _id to keep track of the route parameter value
+  private _id;
 
   departments: Department[] = [
     { id: 1, name: 'Help Desk' },
@@ -33,8 +35,8 @@ export class CreateEmployeeComponent implements OnInit {
     //check the id parameter and set form for create or delete accordingly
   ngOnInit(): void {
     this._route.paramMap.subscribe(parameterMap => {
-      const id = +parameterMap.get('id');  
-      this.getEmployee(id);
+      this._id = +parameterMap.get('id');  
+      this.getEmployee(this._id);
     });
   }
 
@@ -47,16 +49,16 @@ export class CreateEmployeeComponent implements OnInit {
 //save employee by calling employee service
   saveEmployee(): void {
     const newEmployee = Object.assign({}, this.employee);
-    this._employeeService.save(newEmployee);
+    this._id=this._employeeService.save(newEmployee);
     //this.createEmployeeForm.reset();
-    this._router.navigate(['list']);
-    //this._router.navigate(['list',this.employee.id]);
+    this.hideCreatePanel();    
+    this._router.navigate(['list',this._id]);
   }
 
   
 //set employee object for create/edit operation
   private getEmployee(id: number) {
-    // If t
+    // If the id is equal to -1 set employee object to null
     if (id === -1) {
       this.employee = {
         id: null,

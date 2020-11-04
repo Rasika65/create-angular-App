@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import {ClipboardModule} from '@angular/cdk/clipboard';
 import { AppComponent } from './app.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DisplayEmployeeComponent } from './Employees/display-employee.component';
@@ -10,6 +10,7 @@ import { EmployeeService } from './Employees/employee.service';
 import { FormsModule } from '@angular/forms';
 import { CreateEmployeeComponent } from './Employees/create-employee.component';
 import { EmployeeDetailsComponent } from './Employees/employee-details.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 const appRoutes: Routes = [
@@ -34,10 +35,11 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    FontAwesomeModule,
+    ClipboardModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    NgbModule
   ],
   providers: [EmployeeService],
   bootstrap: [AppComponent]
