@@ -19,22 +19,22 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 <h1 align="center">
 	<img src="src/assets/Screenshots/List.png" alt="img" width="90%">
 </h1>
-</br>
+
 * Filtered List
 <h1 align="center">
 	<img src="src/assets/Screenshots/FilteredList.png" alt="img" width="90%">
 </h1>
-</br>
+
 * Create
 <h1 align="center">
 	<img src="src/assets/Screenshots/Create.png" alt="img" width="90%">
 </h1>
-</br>
+
 * Edit
 <h1 align="center">
 	<img src="src/assets/Screenshots/Edit.png" alt="img" width="90%">
 </h1>
-</br>
+
 * Delete
 <h1 align="center">
 	<img src="src/assets/Screenshots/Delete.png" alt="img" width="90%">
