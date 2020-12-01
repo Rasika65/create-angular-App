@@ -24,10 +24,10 @@
 
         <div class="row">
           <div class="col-xs-12 text">
-            <button class="btn btn-primary" type="submit" [routerLink]="['/list',employee.id]" (click)="editEmployee()">Edit</button>
+            <button *ngIf="!confirmDeleteFlag" class="btn btn-primary" type="submit" [routerLink]="['/list',employee.id]" (click)="editEmployee()">Edit</button>&nbsp;
             <span *ngIf="confirmDeleteFlag">
               <span>Are you sure you want to Delete?</span>
-              <button class="btn btn-danger" (click)="deleteEmployee()">Yes</button>
+              <button class="btn btn-danger" (click)="deleteEmployee()">Yes</button>&nbsp;
               <button class="btn btn-primary" (click)="confirmDeleteFlag=false">No</button>
             </span>
             <button *ngIf="!confirmDeleteFlag" class="btn btn-danger" (click)="confirmDeleteFlag=true">Delete</button>
